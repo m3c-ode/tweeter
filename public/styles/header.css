@@ -1,0 +1,20 @@
+header {
+  height: 520px;
+  border-top: 120px solid transparent;
+  /* padding-top: 120px #b7830a; */
+  /* background-color: rgb(209, 154, 14); */
+
+  /* from trasnparenttextures.com */
+  background-color: #b7830a;
+  background-image: url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+}
+
+/* header>br {
+  height: 0;
+  size: 0;
+} */

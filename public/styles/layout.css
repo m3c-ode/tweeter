@@ -3,10 +3,19 @@
  * https://css-tricks.com/international-box-sizing-awareness-day/
  * Do not modify these two selectors, please
  */
+
+/* font-family: 'Bungee',
+cursive;
+font-family: 'Source Sans 3',
+sans-serif; */
+
 html {
   box-sizing: border-box;
 }
-*, *:before, *:after {
+
+*,
+*:before,
+*:after {
   box-sizing: inherit;
 }
 
@@ -18,8 +27,43 @@ body {
   color: #545149;
   background-color: #f4f1ec;
   font-size: 24px;
+  font-family: 'Source Sans 3',
+    sans-serif;
+}
+
+
+.example {
+  flex-direction: flex;
+  /* flex-grow: ; */
 }
 
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
+
+main {
+  width: 90%;
+  margin: 0 auto;
+  background-color: #f4f1ec;
+  color: #545149;
+  font-weight: 600;
+}
+
+/* adds a small border below */
+main>p::after {
+  content: "";
+  /* Add content (empty) for the pseudo-element */
+  display: block;
+  margin-top: 5px;
+  /* Ensure it's a block-level element */
+  border: 2px solid #545149;
+  ;
+}
+
+button {
+  font-family: 'Bungee';
+  background-color: #4056A1;
+  color: #ffffff;
+  border: none;
+  padding: .3em;
+}
