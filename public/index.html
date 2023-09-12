@@ -34,6 +34,7 @@
   <!-- App JS -->
   <script type="text/javascript" src="/scripts/client.js"></script>
   <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
+  <script type="text/javascript" src="/scripts/populate-tweets.js"></script>
 
 </head>
 
@@ -57,7 +58,7 @@
   </header>
 
   <!-- Page-specific (main) content here -->
-  <main class="container">
+  <main id="tweets-container">
     <section class="new-tweet">
       <h2>Compose Tweet</h2>
       <form method="post" action="/tweets">
@@ -69,32 +70,6 @@
         </div>
       </form>
     </section>
-    <article class="tweet-container">
-      <header class="tweet-header">
-        <div class="name-image">
-          <img src="https://i.imgur.com/73hZDYK.png" alt="avatar" />
-          <span class="user-name">Newton</span>
-        </div>
-        <span class="user-tag">@SirIsaac</span>
-      </header>
-      <p>This is the tweet</p>
-      <!-- <br> -->
-      <footer>
-        <div>10 days ago</div>
-        <div class="icons">
-          <i class="fa-solid fa-flag"></i>
-          <i class="fa-solid fa-retweet"></i>
-          <i class="fa-solid fa-heart"></i>
-        </div>
-
-      </footer>
-    </article>
-    <!-- <p>What are you humming about</p>
-    <button>Tweet</button>
-    <h1>Hello</h1>
-    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Beatae voluptates non aperiam quasi, quia consectetur
-      placeat inventore eos, animi asperiores totam, vel expedita blanditiis provident repudiandae. Quaerat laudantium
-      debitis enim.</p> -->
   </main>
 </body>
 
