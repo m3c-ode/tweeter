@@ -2,7 +2,6 @@ form textarea {
   border: none;
   background-color: inherit;
   width: 100%;
-  /* font-family: 'bungee'; */
   font-weight: 600;
   border-bottom: 4px solid #545149;
 }
@@ -14,15 +13,6 @@ form .form-footer {
 form output {
   font-family: 'Bungee';
 }
-
-/* textarea::after {
-  content: "";
-  /* Add content (empty) for the pseudo-element */
-/* display: block; */
-/* margin-top: 5px; */
-/* Ensure it's a block-level element */
-/* border: 2px solid #545149; */
-/* } */
 
 .form-footer {
   display: flex;
