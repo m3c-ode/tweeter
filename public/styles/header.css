@@ -1,4 +1,4 @@
-header {
+header.page-header {
   height: 520px;
   border-top: 120px solid transparent;
   /* from trasnparenttextures.com */
@@ -10,7 +10,7 @@ header {
   justify-content: flex-end;
 }
 
-header h2 {
+header.page-header h2 {
   color: #ffffff;
 }
 
