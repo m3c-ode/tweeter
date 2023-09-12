@@ -3,6 +3,14 @@
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
 */
+
+const myEscape = function(str) {
+  let div = document.createElement("div");
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+};
+
+
 const createTweetElement = (tweetObj) => {
   return `<article class="tweet-container">
     <header class="tweet-header">
@@ -12,8 +20,7 @@ const createTweetElement = (tweetObj) => {
       </div>
       <span class="user-tag">${tweetObj.user.handle}</span>
     </header>
-    <p>${tweetObj.content.text}</p>
-    <!-- <br> -->
+    <p>${myEscape(tweetObj.content.text)}</p>
     <footer>
     <div>${timeago.format(tweetObj.created_at)}</div>
       <div class="icons">
