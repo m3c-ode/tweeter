@@ -32,10 +32,42 @@ const renderTweets = function(tweetsDataArray) {
     const $tweet = createTweetElement(tweet);
 
     // TODO: renders reversely, why?
-    // $(".new-tweet").after($tweet);
+    $(".new-tweet").after($tweet);
 
-    $("#tweets-container").append($tweet);
+    // $("#tweets-container").append($tweet);
   }
+};
+
+const postTweet = function(callback) {
+  $("form").on('submit', function(event) {
+    event.preventDefault();
+    const textAreaInput = this.elements.text.value;
+    console.log("🚀 ~ file: create-new-tweet.js:5 ~ $ ~ textAreaInput:", textAreaInput);
+    if (textAreaInput === "") {
+      return alert('Please tweet something!');
+    }
+    if (textAreaInput.length > 140) {
+      return alert('Your message should have up to 140 characters');
+    }
+    console.log($(this).serialize());
+    const formBody = $(this).serialize();
+    $.ajax("/tweets", {
+      method: 'POST',
+      data: formBody,
+      // success: function(args) {
+      //   console.log('hello', args);
+      // },
+      // error: function(err) {
+      //   console.log('error', error);
+      // }
+    })
+      .then((data) => {
+        console.log('data sent', data);
+        // console.log(success);
+        // callback()
+      })
+      .then(() => callback());
+  });
 };
 
 $(document).ready(function() {
@@ -47,5 +79,6 @@ $(document).ready(function() {
       });
   };
   loadTweets();
+  postTweet(loadTweets);
 
 });
