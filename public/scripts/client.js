@@ -64,16 +64,10 @@ const renderTweets = function(tweetsDataArray) {
   }
 };
 
-// const $tweet = createTweetElement(tweetData);
-// console.log("🚀 ~ file: client.js:42 ~ $tweet:", $tweet);
-
-
 $(document).ready(function() {
 
   // Test / driver code (temporary). Eventually will get this from the server.
   // $(".tweet-container").after($tweet);
   renderTweets(tweetData);
-
-
 
 });
