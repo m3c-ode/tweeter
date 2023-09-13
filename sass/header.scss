@@ -1,8 +1,11 @@
+// @use 'colors';
+@import 'colors';
+
 header.page-header {
   height: 520px;
   border-top: 120px solid transparent;
-  /* from trasnparenttextures.com */
-  background-color: #b7830a;
+  /* from trasnparenhsl(42, 90%, 38%)es.com */
+  background-color: $yellow-tone;
   background-image: url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
   display: flex;
   flex-direction: column;
@@ -31,7 +34,7 @@ h2 .last-name {
     /* need to reassign all border elements, style, with and color */
     padding-top: 2em;
     border-style: solid;
-    border-color: #f4f1ec;
+    border-color: $background-main;
     border-width: 3em 2em 0 2em;
   }
 }

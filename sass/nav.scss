@@ -1,6 +1,9 @@
+@import 'colors';
+
 nav {
   height: 120px;
-  background-color: #4056A1;
+  background-color: $blue-tone;
+  // background-color: #40a196;
   color: #ffffff;
   padding: 0 1.5em;
   display: flex;

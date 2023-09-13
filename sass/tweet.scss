@@ -1,6 +1,8 @@
+@import 'colors';
+
 article.tweet-container {
   margin: 2em 0;
-  border: 4px solid #545149;
+  border: 4px solid $writing-main;
   padding: .5em;
 }
 
@@ -28,7 +30,7 @@ article.tweet-container header .name-image {
 }
 
 .tweet-container br {
-  border-bottom: 4px solid #545149;
+  border-bottom: 4px solid $writing-main;
 }
 
 .tweet-container footer {
@@ -36,12 +38,12 @@ article.tweet-container header .name-image {
   justify-content: space-between;
   margin: .5em 0;
   padding: .8em .8em 0em;
-  border-top: 4px solid #545149;
+  border-top: 4px solid $writing-main;
   font-size: .7em;
 }
 
 .tweet-container footer .icons {
-  color: #4056A1;
+  color: $blue-tone;
 
 }
 
@@ -50,7 +52,7 @@ article.tweet-container header .name-image {
 }
 
 .tweet-container footer .icons .fa-solid:hover {
-  color: #b7830a;
+  color: $yellow-tone;
   cursor: pointer;
 }
 

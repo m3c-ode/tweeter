@@ -1,3 +1,5 @@
+@import 'colors';
+
 .new-tweet {
   position: relative;
 }
@@ -7,7 +9,7 @@ form textarea {
   background-color: inherit;
   width: 100%;
   font-weight: 600;
-  border-bottom: 4px solid #545149;
+  border-bottom: 4px solid $writing-main;
 }
 
 form .form-footer {
@@ -25,7 +27,7 @@ form output {
 
 #form-error {
   display: none;
-  border: 4px solid #545149;
+  border: 4px solid $writing-main;
   box-shadow: 0 0 10px 10px #aabedf;
   text-align: center;
   color: red;
@@ -33,7 +35,7 @@ form output {
   top: -0.5em;
   width: 100%;
   z-index: 100;
-  background: #f4f1ec;
+  background: $background-main;
 }
 
 #form-error button {
