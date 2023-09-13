@@ -28,16 +28,16 @@
 //     </article>`;
 // };
 
-const getData = function() {
+// const getData = function() {
 
-  $.getJSON("./data-files/initial-tweets.json", (data) => {
-    console.log('data', data);
+//   $.getJSON("./data-files/initial-tweets.json", (data) => {
+//     console.log('data', data);
 
-  });
-  // $.ajax("../server/data-files/initial-tweets.json", { method: 'GET' })
-  //   .then((data) => {
-  //     console.log('data', data);
-  //   });
-};
+//   });
+// $.ajax("../server/data-files/initial-tweets.json", { method: 'GET' })
+//   .then((data) => {
+//     console.log('data', data);
+//   });
+// };
 
-getData();
+// getData();

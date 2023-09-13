@@ -44,14 +44,16 @@ const createTweetElement = (tweetObj) => {
 };
 
 const renderTweets = function(tweetsDataArray) {
+
   console.log("🚀 ~ file: client.js:56 ~ renderTweets ~ tweetsDataArray:", tweetsDataArray);
-  for (const tweet of tweetsDataArray) {
+  const sortedTweets = tweetsDataArray.sort((a, b) => b.created_at - a.created_at);
+  for (const tweet of sortedTweets) {
     const $tweet = createTweetElement(tweet);
 
     // TODO: renders reversely, why?
-    $(".new-tweet").after($tweet);
+    // $(".new-tweet").after($tweet);
 
-    // $("#tweets-container").append($tweet);
+    $(".tweets-list").append($tweet);
   }
 };
 
@@ -84,13 +86,21 @@ const postTweet = function(callback) {
       .then((data) => {
         console.log('data sent', data);
         // console.log(success);
-        // callback()
+        // callback();
+      })
+      .then(() => {
+        // reset fields
+        $(".tweets-list").empty();
+        this.elements.text.value = '';
+        $(this).find("output.counter").text('140');
       })
       .then(() => callback());
   });
 };
 
 $(document).ready(function() {
+  let initialLoadComplete = false;
+  console.log("🚀 ~ file: client.js:96 ~ $ ~ initialLoadComplete:", initialLoadComplete);
   const loadTweets = function() {
     $.ajax("/tweets", { method: 'GET' })
       .then(tweets => {
@@ -98,7 +108,14 @@ $(document).ready(function() {
         renderTweets(tweets);
       });
   };
-  loadTweets();
+  if (!initialLoadComplete) {
+    loadTweets();
+    initialLoadComplete = true;
+  }
+
   postTweet(loadTweets);
+  console.log("🚀 ~ file: client.js:107 ~ $ ~ initialLoadComplete:", initialLoadComplete);
+
+  // loadTweets();
 
 });
