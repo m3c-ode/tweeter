@@ -21,3 +21,27 @@ h2 .first-name {
 h2 .last-name {
   font-weight: 300;
 }
+
+@media only screen and (min-width: 1024px) {
+  header.page-header {
+    /* box-sizing: border-box; */
+    /* width: 40%;
+    float: left;
+    margin: 5em 4em 0 2em;
+    height: fit-content;
+    border-top: 20em #f4f1ec;
+    border-right: 3em;
+    padding-top: 2em;
+    position: fixed; */
+
+    /* box-sizing: border-box; */
+    width: 40%;
+    float: left;
+    height: auto;
+    /* border-top: 20em solid #f4f1ec; */
+    padding-top: 2em;
+    border-style: solid;
+    border-color: #f4f1ec;
+    border-width: 3em 2em 0 2em;
+  }
+}

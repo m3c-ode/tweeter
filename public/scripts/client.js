@@ -20,7 +20,8 @@ const createErrorElement = (message) => {
   });
 };
 
-
+// Creates a html from stirng template.
+// To create a jQuery element, could return $(`...`)
 const createTweetElement = (tweetObj) => {
   return `<article class="tweet-container">
     <header class="tweet-header">
@@ -44,16 +45,22 @@ const createTweetElement = (tweetObj) => {
 };
 
 const renderTweets = function(tweetsDataArray) {
+  // Could empty the section here, becaue synchronous code would not render an empty screen at all for clients
+  $(".tweets-list").empty();
 
-  console.log("🚀 ~ file: client.js:56 ~ renderTweets ~ tweetsDataArray:", tweetsDataArray);
-  const sortedTweets = tweetsDataArray.sort((a, b) => b.created_at - a.created_at);
-  for (const tweet of sortedTweets) {
+  // Sort the array of tweets reverse chronologically based on their created_at date
+  // const sortedTweets = tweetsDataArray.sort((a, b) => b.created_at - a.created_at);
+  // for (const tweet of sortedTweets) {
+  for (const tweet of tweetsDataArray) {
     const $tweet = createTweetElement(tweet);
 
     // TODO: renders reversely, why?
     // $(".new-tweet").after($tweet);
 
-    $(".tweets-list").append($tweet);
+    // $(".tweets-list").append($tweet);
+
+    // use prepend() instead of append() to insert reversely
+    $(".tweets-list").prepend($tweet);
   }
 };
 
@@ -61,9 +68,7 @@ const postTweet = function(callback) {
   $("form").on('submit', function(event) {
     event.preventDefault();
     const textAreaInput = this.elements.text.value;
-    console.log("🚀 ~ file: create-new-tweet.js:5 ~ $ ~ textAreaInput:", textAreaInput);
     if (textAreaInput === "") {
-      // alert('Please tweet something!');
       createErrorElement('Please tweet something!');
       return;
     }
@@ -85,22 +90,23 @@ const postTweet = function(callback) {
     })
       .then((data) => {
         console.log('data sent', data);
-        // console.log(success);
-        // callback();
       })
       .then(() => {
-        // reset fields
-        $(".tweets-list").empty();
+        // reset container and fields before reload
+        // $(".tweets-list").empty();
         this.elements.text.value = '';
         $(this).find("output.counter").text('140');
       })
-      .then(() => callback());
+      .then(() => callback())
+      .catch((error) => {
+        console.log('there was an error posting new tweet', error);
+      });
   });
 };
 
 $(document).ready(function() {
-  let initialLoadComplete = false;
-  console.log("🚀 ~ file: client.js:96 ~ $ ~ initialLoadComplete:", initialLoadComplete);
+  // let initialLoadComplete = false;
+  // console.log("🚀 ~ file: client.js:96 ~ $ ~ initialLoadComplete:", initialLoadComplete);
   const loadTweets = function() {
     $.ajax("/tweets", { method: 'GET' })
       .then(tweets => {
@@ -108,13 +114,13 @@ $(document).ready(function() {
         renderTweets(tweets);
       });
   };
-  if (!initialLoadComplete) {
-    loadTweets();
-    initialLoadComplete = true;
-  }
+  // if (!initialLoadComplete) {
+  loadTweets();
+  // initialLoadComplete = true;
+  // }
 
   postTweet(loadTweets);
-  console.log("🚀 ~ file: client.js:107 ~ $ ~ initialLoadComplete:", initialLoadComplete);
+  // console.log("🚀 ~ file: client.js:107 ~ $ ~ initialLoadComplete:", initialLoadComplete);
 
   // loadTweets();
 
