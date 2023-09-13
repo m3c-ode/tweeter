@@ -3,10 +3,12 @@
  * https://css-tricks.com/international-box-sizing-awareness-day/
  * Do not modify these two selectors, please
  */
+
 /* font-family: 'Bungee',
 cursive;
 font-family: 'Source Sans 3',
 sans-serif; */
+
 html {
   box-sizing: border-box;
 }
@@ -20,12 +22,15 @@ html {
 /*
  * Global layout stuff
  */
+
 body {
   color: #545149;
   background-color: #f4f1ec;
   font-size: 24px;
-  font-family: "Source Sans 3", sans-serif;
+  font-family: 'Source Sans 3',
+    sans-serif;
 }
+
 
 .example {
   flex-direction: flex;
@@ -35,6 +40,7 @@ body {
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
+
 #tweets-container {
   width: 90%;
   margin: 0 auto;
@@ -44,29 +50,32 @@ body {
 }
 
 /* adds a small border below */
-#tweets-container > p::after {
+#tweets-container>p::after {
   content: "";
   /* Add content (empty) for the pseudo-element */
   display: block;
   margin-top: 5px;
   /* Ensure it's a block-level element */
   border: 2px solid #545149;
+  ;
 }
 
 button {
-  font-family: "Bungee";
+  font-family: 'Bungee';
   background-color: #4056A1;
   color: #ffffff;
   border: none;
-  padding: 0.3em;
+  padding: .3em;
 }
 
 @media only screen and (min-width: 1024px) {
+
   /* Possibility to flex with common container */
   /* main {
     display: flex;
     justify-content: space-around;
   } */
+
   #tweets-container {
     box-sizing: border-box;
     float: right;
@@ -74,7 +83,9 @@ button {
     padding: 3em 4em;
     /* border-width: 3em 0; */
   }
+
   #tweets-container h2 {
     margin-top: 0;
+    ;
   }
 }
