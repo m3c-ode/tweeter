@@ -1,3 +1,7 @@
+.new-tweet {
+  position: relative;
+}
+
 form textarea {
   border: none;
   background-color: inherit;
@@ -17,4 +21,30 @@ form output {
 .form-footer {
   display: flex;
   justify-content: space-between;
+}
+
+#form-error {
+  display: none;
+  border: 4px solid #545149;
+  box-shadow: 0 0 10px 10px #aabedf;
+  text-align: center;
+  color: red;
+  position: absolute;
+  top: -0.5em;
+  width: 100%;
+  z-index: 100;
+  background: #f4f1ec;
+}
+
+#form-error button {
+  margin-bottom: 1em;
+}
+
+#form-error p {
+  margin: .5em 0;
+}
+
+#form-error i {
+  font-size: 2em;
+  margin-top: .4em;
 }

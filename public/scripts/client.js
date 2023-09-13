@@ -10,6 +10,16 @@ const myEscape = function(str) {
   return div.innerHTML;
 };
 
+const createErrorElement = (message) => {
+  $('#form-error').find('.error-detail').text(message);
+  // $('#form-error').attr("hidden", false);
+  // $('#form-error').show();
+  $('#form-error').slideDown();
+  $('#form-error').find("button").on("click", function() {
+    $('#form-error').slideUp('slow');
+  });
+};
+
 
 const createTweetElement = (tweetObj) => {
   return `<article class="tweet-container">
@@ -51,10 +61,13 @@ const postTweet = function(callback) {
     const textAreaInput = this.elements.text.value;
     console.log("🚀 ~ file: create-new-tweet.js:5 ~ $ ~ textAreaInput:", textAreaInput);
     if (textAreaInput === "") {
-      return alert('Please tweet something!');
+      // alert('Please tweet something!');
+      createErrorElement('Please tweet something!');
+      return;
     }
     if (textAreaInput.length > 140) {
-      return alert('Your message should have up to 140 characters');
+      createErrorElement('Please keep your tweet within the limit of 140 characters!');
+      return;
     }
     console.log($(this).serialize());
     const formBody = $(this).serialize();
