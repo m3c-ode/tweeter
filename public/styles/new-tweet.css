@@ -9,18 +9,13 @@ form textarea {
   font-weight: 600;
   border-bottom: 4px solid #545149;
 }
-
 form .form-footer {
   margin-top: 0.3em;
-}
-
-form output {
-  font-family: "Bungee";
-}
-
-.form-footer {
   display: flex;
   justify-content: space-between;
+}
+form output {
+  font-family: "Bungee";
 }
 
 #form-error {
@@ -35,15 +30,12 @@ form output {
   z-index: 100;
   background: #f4f1ec;
 }
-
 #form-error button {
   margin-bottom: 1em;
 }
-
 #form-error p {
   margin: 0.5em 0;
 }
-
 #form-error i {
   font-size: 2em;
   margin-top: 0.4em;

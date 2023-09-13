@@ -43,16 +43,6 @@ body {
   font-weight: 600;
 }
 
-/* adds a small border below */
-#tweets-container > p::after {
-  content: "";
-  /* Add content (empty) for the pseudo-element */
-  display: block;
-  margin-top: 5px;
-  /* Ensure it's a block-level element */
-  border: 2px solid #545149;
-}
-
 button {
   font-family: "Bungee";
   background-color: #4056A1;

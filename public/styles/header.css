@@ -9,16 +9,13 @@ header.page-header {
   align-items: center;
   justify-content: flex-end;
 }
-
 header.page-header h2 {
   color: #ffffff;
 }
-
-h2 .first-name {
+header.page-header .first-name {
   font-weight: 600;
 }
-
-h2 .last-name {
+header.page-header .last-name {
   font-weight: 300;
 }
 

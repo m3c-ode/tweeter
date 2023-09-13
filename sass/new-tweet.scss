@@ -4,25 +4,24 @@
   position: relative;
 }
 
-form textarea {
-  border: none;
-  background-color: inherit;
-  width: 100%;
-  font-weight: 600;
-  border-bottom: 4px solid $writing-main;
-}
+form {
+  textarea {
+    border: none;
+    background-color: inherit;
+    width: 100%;
+    font-weight: 600;
+    border-bottom: 4px solid $writing-main;
+  }
 
-form .form-footer {
-  margin-top: .3em;
-}
+  .form-footer {
+    margin-top: .3em;
+    display: flex;
+    justify-content: space-between;
+  }
 
-form output {
-  font-family: 'Bungee';
-}
-
-.form-footer {
-  display: flex;
-  justify-content: space-between;
+  output {
+    font-family: 'Bungee';
+  }
 }
 
 #form-error {
@@ -36,17 +35,17 @@ form output {
   width: 100%;
   z-index: 100;
   background: $background-main;
-}
 
-#form-error button {
-  margin-bottom: 1em;
-}
+  button {
+    margin-bottom: 1em;
+  }
 
-#form-error p {
-  margin: .5em 0;
-}
+  p {
+    margin: .5em 0;
+  }
 
-#form-error i {
-  font-size: 2em;
-  margin-top: .4em;
+  i {
+    font-size: 2em;
+    margin-top: .4em;
+  }
 }
