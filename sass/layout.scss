@@ -33,10 +33,6 @@ body {
 }
 
 
-.example {
-  flex-direction: flex;
-  /* flex-grow: ; */
-}
 
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
@@ -48,8 +44,6 @@ body {
   background-color: $background-main;
   color: $writing-main;
   font-weight: 600;
-
-
 }
 
 button {
@@ -58,6 +52,7 @@ button {
   color: #ffffff;
   border: none;
   padding: .3em;
+  cursor: pointer;
 }
 
 @media only screen and (min-width: 1024px) {

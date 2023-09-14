@@ -27,11 +27,6 @@ body {
   font-family: "Source Sans 3", sans-serif;
 }
 
-.example {
-  flex-direction: flex;
-  /* flex-grow: ; */
-}
-
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
@@ -49,6 +44,7 @@ button {
   color: #ffffff;
   border: none;
   padding: 0.3em;
+  cursor: pointer;
 }
 
 @media only screen and (min-width: 1024px) {
