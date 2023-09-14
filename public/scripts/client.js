@@ -120,8 +120,12 @@ $(document).ready(function() {
   // }
 
   postTweet(loadTweets);
-  // console.log("🚀 ~ file: client.js:107 ~ $ ~ initialLoadComplete:", initialLoadComplete);
 
-  // loadTweets();
-
+  // Allow for enter press to submit the form
+  $('#tweet-text').keypress(function(event) {
+    if (event.keyCode === 13) {
+      event.preventDefault();
+      postTweet(loadTweets);
+    }
+  });
 });
