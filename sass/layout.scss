@@ -78,6 +78,8 @@ button {
 }
 
 #toggle-top {
+  // display: none;
+  z-index: 100;
   font-size: 1.1em;
   border-radius: 50%;
   width: 2.5em;

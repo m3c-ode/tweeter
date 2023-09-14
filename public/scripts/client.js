@@ -76,7 +76,6 @@ const postTweet = function(callback) {
       createErrorElement('Please keep your tweet within the limit of 140 characters!');
       return;
     }
-    console.log($(this).serialize());
     const formBody = $(this).serialize();
     $.ajax("/tweets", {
       method: 'POST',
@@ -102,11 +101,18 @@ const postTweet = function(callback) {
         console.log('there was an error posting new tweet', error);
       });
   });
+
+
+  // Allow for enter press to submit the form
+  $('#tweet-text').keypress(function(event) {
+    if (event.keyCode === 13) {
+      event.preventDefault();
+      $(this).closest("form").submit();
+    }
+  });
 };
 
 $(document).ready(function() {
-  // let initialLoadComplete = false;
-  // console.log("🚀 ~ file: client.js:96 ~ $ ~ initialLoadComplete:", initialLoadComplete);
   const loadTweets = function() {
     $.ajax("/tweets", { method: 'GET' })
       .then(tweets => {
@@ -114,18 +120,7 @@ $(document).ready(function() {
         renderTweets(tweets);
       });
   };
-  // if (!initialLoadComplete) {
   loadTweets();
-  // initialLoadComplete = true;
-  // }
 
   postTweet(loadTweets);
-
-  // Allow for enter press to submit the form
-  $('#tweet-text').keypress(function(event) {
-    if (event.keyCode === 13) {
-      event.preventDefault();
-      postTweet(loadTweets);
-    }
-  });
 });
