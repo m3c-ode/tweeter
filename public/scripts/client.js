@@ -104,8 +104,8 @@ const postTweet = function(callback) {
 
 
   // Allow for enter press to submit the form
-  $('#tweet-text').keypress(function(event) {
-    if (event.keyCode === 13) {
+  $('#tweet-text').keydown(function(event) {
+    if (event.keyCode === 13 && !event.shiftKey) {
       event.preventDefault();
       $(this).closest("form").submit();
     }
