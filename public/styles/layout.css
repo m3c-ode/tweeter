@@ -63,6 +63,9 @@ button {
   #tweets-container h2 {
     margin-top: 0;
   }
+  #main {
+    margin-top: 200px;
+  }
 }
 #toggle-top {
   z-index: 100;

@@ -6,11 +6,11 @@ article.tweet-container {
   padding: .5em;
 
   // article.tweet-container:hover {
-  //   box-shadow: 10px 10px #aabedf;
+  //   box-shadow: 10px 10px $writing-secondary;
   // }
   // Equivalent to
   &:hover {
-    box-shadow: 10px 10px #aabedf;
+    box-shadow: 10px 10px $writing-secondary;
   }
 
   header {
@@ -27,7 +27,7 @@ article.tweet-container {
     }
 
     .user-tag {
-      color: #aabedf
+      color: $writing-secondary
     }
   }
 
@@ -51,10 +51,11 @@ article.tweet-container {
 
   .fa-solid {
     padding: 0 0.3em;
+
+    &:hover {
+      color: $yellow-tone;
+      cursor: pointer;
+    }
   }
 
-  &:hover {
-    color: $yellow-tone;
-    cursor: pointer;
-  }
 }

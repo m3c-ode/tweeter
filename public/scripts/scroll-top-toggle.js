@@ -8,8 +8,9 @@ $(document).ready(() => {
     }
   });
 
-  $("#toggle-top").on('click', function() {
-    document.getElementById('tweets-container').scrollIntoView();
+  $("#toggle-top").on('click', function(event) {
+    // event.preventDefault();
+    window.scrollTo(0, 0);
     $("#tweet-text").focus();
     return false;
   });

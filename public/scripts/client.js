@@ -116,7 +116,6 @@ $(document).ready(function() {
   const loadTweets = function() {
     $.ajax("/tweets", { method: 'GET' })
       .then(tweets => {
-        console.log('tweets from get tweets', tweets);
         renderTweets(tweets);
       });
   };

@@ -4,7 +4,6 @@
 nav {
   height: 120px;
   background-color: $blue-tone;
-  // background-color: #40a196;
   color: #ffffff;
   padding: 0 1.5em;
   display: flex;
@@ -12,7 +11,9 @@ nav {
   justify-content: space-between;
   align-items: center;
   position: fixed;
+  top: 0;
   width: 100%;
+  z-index: 10;
 
   .page-title {
     font-family: 'Bungee', cursive;
@@ -60,6 +61,7 @@ nav {
 
 @media only screen and (min-width: 1024px) {
   nav {
-    position: sticky;
+    // position: relative;
+    // top: 0;
   }
 }

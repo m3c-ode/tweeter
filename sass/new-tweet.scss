@@ -27,7 +27,7 @@ form {
 #form-error {
   display: none;
   border: 4px solid $writing-main;
-  box-shadow: 0 0 10px 10px #aabedf;
+  box-shadow: 0 0 10px 10px $writing-secondary;
   text-align: center;
   color: red;
   position: absolute;

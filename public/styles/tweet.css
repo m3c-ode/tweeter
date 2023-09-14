@@ -40,7 +40,7 @@ article.tweet-container footer {
 .icons .fa-solid {
   padding: 0 0.3em;
 }
-.icons:hover {
+.icons .fa-solid:hover {
   color: #b7830a;
   cursor: pointer;
 }
