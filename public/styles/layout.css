@@ -64,3 +64,18 @@ button {
     margin-top: 0;
   }
 }
+#toggle-top {
+  font-size: 1.1em;
+  border-radius: 50%;
+  width: 2.5em;
+  height: 2.5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  background-color: red;
+  color: #ffffff;
+  position: fixed;
+  bottom: 1em;
+  right: 1em;
+}
