@@ -10,6 +10,7 @@ header.page-header {
   background-image: url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
   @include flexVerticalAlign;
   justify-content: flex-end;
+  margin-bottom: 2em;
 
   h2 {
     color: #ffffff;
